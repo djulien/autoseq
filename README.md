@@ -1,2 +1,2 @@
 # autoseq
-try to automate timing, effects, sequencing of audio files
+try to automate timing, effects, sequencing of audio files (UNDER CONSTRUCTION)
