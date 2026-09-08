@@ -112,7 +112,7 @@ def check_and_offer_install() -> None:
 
 def config_path_for(audio_path: Path) -> Path:
 #    return audio_path.with_suffix(".json")
-    return audio_path.parent / "auto_timing" / f"{audio_path.stem}.json"
+    return audio_path.parent / "auto_seq" / f"{audio_path.stem}.json"
 
 def load_config(audio_path: Path) -> Dict[str, Any]:
     cfg_file = config_path_for(audio_path)
@@ -326,7 +326,7 @@ def main() -> None:
     parser.add_argument("--lyrics", type=Path, default=None,
                         help="Optional plain-text lyrics file")
     parser.add_argument("--work-dir", type=Path, default=None,
-                        help="Working directory (default: <audio-dir>/auto_timing)")
+                        help="Working directory (default: <audio-dir>/auto_seq)")
     args = parser.parse_args()
 
     audio_path: Path = args.audio.resolve()
@@ -348,7 +348,7 @@ def main() -> None:
     work_dir = args.work_dir
     if work_dir is None:
 #        work_dir = audio_path.with_name(audio_path.stem + "_timing")
-        work_dir = audio_path.parent / "auto_timing"
+        work_dir = audio_path.parent / "auto_seq"
     work_dir = work_dir.resolve()
     work_dir.mkdir(parents=True, exist_ok=True)
     debug(f"Working directory: {relpath(work_dir, audio_path)}")
