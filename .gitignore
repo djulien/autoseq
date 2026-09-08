@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*$py.class
+
+# C extensions
+*.so
+
+build/
+dist/
+downloads/
+lib/
+var/
+share/
+MANIFEST
+
+*.log
+local_settings.py
+
+docs/_build/
+target/
+
